@@ -8,6 +8,10 @@ class LogoApp extends StatefulWidget{
 }
 
 class LogoAppState extends State<LogoApp>  with SingleTickerProviderStateMixin{
+
+  Animation<double> animation;
+  AnimationController controller;
+  
   Widget build(context){
     return Center(
       child: Container(
