@@ -7,7 +7,7 @@ class LogoApp extends StatefulWidget{
   LogoAppState createState() => LogoAppState();
 }
 
-class LogoAppState extends State<LogoApp>{
+class LogoAppState extends State<LogoApp>  with SingleTickerProviderStateMixin{
   Widget build(context){
     return Center(
       child: Container(
