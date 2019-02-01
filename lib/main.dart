@@ -12,6 +12,10 @@ class LogoAppState extends State<LogoApp>  with SingleTickerProviderStateMixin{
   Animation<double> animation;
   AnimationController controller;
   
+  @override
+  void initState(){
+    super.initState();
+  }
   Widget build(context){
     return Center(
       child: Container(
