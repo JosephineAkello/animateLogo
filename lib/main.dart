@@ -25,13 +25,15 @@ class LogoAppState extends State<LogoApp>  with SingleTickerProviderStateMixin{
          controller.forward();
 
   }
-  }
+  @override
+
   Widget build(context){
     return Center(
       child: Container(
     margin: EdgeInsets.symmetric(vertical: 10),
-    height: 200,
-    width: 200,
+    
+    height:animation.value,
+    width: animation.value,
     child: FlutterLogo(),
      ),
       );
