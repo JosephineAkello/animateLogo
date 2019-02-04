@@ -19,6 +19,12 @@ class AnimatedLogo extends AnimatedWidget {
     );
   }
 }
+class LogoWidget extends StatelessWidget{
+  Widget build(context)=> Container(
+    margin: EdgeInsets.symmetric(vertical: 10),
+    child: FlutterLogo(),
+  );
+}
 
 class LogoApp extends StatefulWidget {
   LogoAppState createState() => LogoAppState();
