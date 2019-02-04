@@ -26,6 +26,23 @@ class LogoWidget extends StatelessWidget{
   );
 }
 
+class GrowTransition extends StatelessWidget{
+  GrowTransition({this.child, this.animation});
+  final Widget child;
+  final Animation<double> animation;
+
+  Widget build(context)=> Center(
+    child: AnimatedBuilder(
+      animation: animation,
+      builder: (context, child)=>Container(
+        height: animation.value,
+        width: animation.value,
+        child: child,
+      ),
+      child: child),
+    );
+    
+}
 class LogoApp extends StatefulWidget {
   LogoAppState createState() => LogoAppState();
 }
