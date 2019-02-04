@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
 
-void main()=> runApp(LogoApp());
+void main() => runApp(LogoApp());
 
-class AnimatedLogo extends AnimatedWidget{
+class AnimatedLogo extends AnimatedWidget {
   AnimatedLogo({Key key, Animation<double> animation})
-  : super(key : key, listenable: animation);
+      : super(key: key, listenable: animation);
 
-
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return Center(
       child: Container(
@@ -21,47 +20,31 @@ class AnimatedLogo extends AnimatedWidget{
   }
 }
 
-class LogoApp extends StatefulWidget{
+class LogoApp extends StatefulWidget {
   LogoAppState createState() => LogoAppState();
 }
 
-class LogoAppState extends State<LogoApp>  with SingleTickerProviderStateMixin{
-
+class LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController controller;
-  
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
-    controller= AnimationController(duration: const Duration(seconds: 2),vsync: this);
-  animation= Tween<double>(begin: 0, end: 300).animate(
-    controller);
-  animation.addListener((){
-    setState(() {
-          
-        });
-         });
-         controller.forward();
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween<double>(begin: 0, end: 300).animate(controller);
 
+    controller.forward();
   }
-  @override
 
-  Widget build(context){
-    return Center(
-      child: Container(
-    margin: EdgeInsets.symmetric(vertical: 10),
-    
-    height:animation.value,
-    width: animation.value,
-    child: FlutterLogo(),
-     ),
-      );
-  }
   @override
-  void dispose(){
+  Widget build(context) => AnimatedLogo(animation: animation);
+
+  @override
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
-
 }
