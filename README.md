@@ -1,6 +1,6 @@
 # animatedlogo
 
-A new Flutter project.
+A flutter project illustarating how flutter logo is animated.
 
 ## Getting Started
 
